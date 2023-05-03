@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>orot_ai</title>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/main.js"></script>
+
+</head>
+<body>
+    <div class="wrap" id="tab-page-wrap">
+
+    <!--------------------------------- tab-page -------------------------------->
+
+        <div class="tab-page page-initial" data-state="1" data-evaluator="evaluatorFunc">
+            <h3 class="tab-title">개인정보 수집 및 이용 동의</h3>
+            <p class="terms">
+                1) 개인정보의 수집·이용 목적 : 포괄적 동의합니다.<br/>
+                2) 수집하는 개인정보의 항목: 이름, 생년월일<br/>
+                3) 개인정보의 보유·이용 기간 : 2년간 보관후 폐기합니다.
+            </p>
+            <div class="terms-row">
+                <input type="checkbox" id="termschk"/>
+                <label for="termschk" class="terms-label">
+                    <img src="./images/svg/Check.svg" class="terms-check-img" alt="체크박스 이미지" />
+                </label>
+                <p class="terms-agree">개인정보의 수집 및 이용에 동의합니다.</p>
+            </div>
+        </div> <!-- tab-page 1 -->
+
+        <div class="tab-page" data-state="2" data-evaluator="evaluatorFunc">
+            <div class="col-1">
+                <div class="row-1">
+                    <label for="name" class="form-label">이름</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="이름을 입력하세요." value="" required />
+                </div>
+                <div class="invalid-feedback">필수입니다</div>
+            </div>
+            <div class="col-1">
+                <div class="row-1">
+                    <label for="birthDay" class="form-label">생년월일</label>
+                    <input type="date" class="form-control" id="birthDay" name="birthDay" placeholder="1999-09-09" required />
+                </div>
+                <div class="invalid-feedback">생년월일을 입력해주세요</div>
+            </div>
+            <div class="col-1">
+                <div class="row-1">
+                    <label for="hospital" class="form-label">담당병원</label>
+                    <select class="form-control form-select-lg" name="hospital" aria-label=".form-select-lg" />
+                        <option selected>병원선택하기</option>
+                        <option value="동국대 산부인과">동국대 산부인과</option>
+                        <option value="일산 산부인과">일산 산부인과</option> 
+                        <option value="부산 산부인과">부산 산부인과</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row-2">
+                <label for="pregnancy" class="form-label">임신여부</label>
+                <div class="radio-input-box">
+                    <input class="form-check-input" type="radio" id="pregnancy01" value="임신중" name="pregnancy"/>
+                    <input class="form-check-input" type="radio" id="pregnancy02" value="비임신" name="pregnancy"/>
+                    <div class="radio-label-box">
+                        <label class="form-check-label form-check-label01" for="pregnancy01">임신중</label>
+                        <label class="form-check-label form-check-label02" for="pregnancy02">비임신</label>
+                    </div>
+                </div>
+            </div>
+        </div> <!-- tab-page 2 -->
+
+        <div class="tab-page page-3-1" data-state="3" data-evaluator="evaluatorFunc">
+            <h4>3-1</h4>
+        </div> <!-- tab-page 3-1 -->
+
+        <div class="tab-page page-3-2" data-state="3" data-evaluator="evaluatorFunc">
+            <h4>3-2</h4>
+        </div> <!-- tab-page 3-2 -->
+
+        <div class="tab-page" data-state="4" data-evaluator="evaluatorFunc">
+            <h4>4</h4>
+        </div> <!-- tab-page 4 -->
+
+        <div class="tab-page page-final" data-state="5" data-evaluator="evaluatorFunc">
+            <h4>5</h4>
+        </div> <!-- tab-page 5 -->
+
+    <!--------------------------------- btn-box -------------------------------->
+
+        <div class="btn-box">
+            <div class="btn">
+                <button id="prev-btn" type="button" class="prev-btn btn">이전</button>
+            </div>
+            <div class="btn">
+                <button id="next-btn" type="button" class="next-btn btn">다음</button>
+            </div>
+        </div> <!-- btn-box -->
+    </div>
+    
+    <script>
+        $('#tab-page-wrap').finiteStateMachine({
+            prevSelector: '#prev-btn',
+            nextSelector: '#next-btn'
+        });
+
+        function evaluatorFunc () {
+            switch ($('#tab-page-wrap').getCurrentState().data('state')) {
+                case 1:
+                    return 2;
+                case 2:
+                    if ($('#select1').val() == '1')
+                        return 4;
+                    else
+                        return 3;
+                case 3:
+                    return 4;
+                case 4:
+                    return 5;
+            }
+        };
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+* {margin: 0; padding: 0;}
+
+.wrap {
+    padding: 29px;
+    padding-top: 40px;
+}
+
+/* ---------------------- tab-page 1 ----------------------- */
+.tab-page {
+    width: 100%;
+}
+.tab-page .tab-title {
+    color: #3d3d3d;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 26px;
+}
+.tab-page .terms, 
+.tab-page .terms-row {
+    color: #707070;
+    font-size: 16px;
+}
+.terms-row {
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+}
+#termschk {display: none;}
+.terms-row .terms-label {
+    width: 20px;
+    height: 20px;
+    background-color: #bbb;
+    border-radius: 10px;
+    float: left;
+    margin-right: 7px
+}
+.terms-row .terms-label .terms-check-img {
+    width: 66%;
+    padding-left: 17%;
+    padding-bottom: 7%;
+}
+.terms-row .terms-agree {
+    float: left;
+    width: calc(100% - 27px);
+}
+
+
+#termschk:checked ~.terms-label {background-color: #7465E8;}
+
+
+/* ---------------------- tab-page 2 ----------------------- */
+.tab-page .col-1 {
+    height: 56px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    position: relative;
+}
+.tab-page .form-label {
+    display: inline-block;
+    width: 60px;
+    height: 40px;
+    color: #767676;
+    font-size: 14px;
+    line-height: 38px;
+    margin-right: 7px;
+}
+.tab-page .row-1 .form-control {
+    width: calc(100% - 78px);
+    height: 36px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    float: right;
+}
+.tab-page .row-1 .form-control:focus {outline:none;}
+.tab-page .invalid-feedback {
+    color: #707070;
+    font-size: 11px;
+    margin-top: 8px;
+    position: absolute;
+    bottom: 0;
+    left: 78px;
+}
+
+#pregnancy01, #pregnancy02 {display: none;}
+#pregnancy01:checked ~.radio-label-box .form-check-label01 {
+    border: 2px solid #7465E8;
+}
+#pregnancy02:checked ~.radio-label-box .form-check-label02 {
+    border: 2px solid #7465E8;
+}
+.row-2 {overflow: hidden;}
+.tab-page .radio-input-box {
+    width: calc(100% - 78px);
+    height: 40px;
+    float: right;
+}
+.tab-page .radio-label-box {
+    display: flex;
+    justify-content: space-around;
+}
+.tab-page .radio-label-box .form-check-label {
+    display: inline-block;
+    width: calc(50% - 10px);
+    height: 32px;
+    font-size: 1px;
+    text-align: center;
+    color: #767676;
+    line-height: 32px;
+    border-radius: 10px;
+    border: 2px solid #eee;
+    margin-top: 4px;
+
+}
+/* ---------------------- tab-page 3-1 ----------------------- */
+/* ---------------------- tab-page 3-2 ----------------------- */
+/* ---------------------- tab-page 4 ----------------------- */
+/* ---------------------- tab-page 5 ----------------------- */
+/* ---------------------- btn-box ----------------------- */
+/* .wrap .btn-box{} */
+.btn-box {
+    display: flex;
+    justify-content: space-between;
+}
+.btn-box .btn {
+    width: 54px;
+    height: 34px;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    float: left;
+    margin-top: 50px;
+}
+.btn-box .prev-btn {
+    float: left;
+    background-color: #7465E8;
+}
+.btn-box .next-btn {
+    float: right;
+    background-color: #7465E8;
+}
