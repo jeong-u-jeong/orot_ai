@@ -57,15 +57,15 @@
 }
 .tab-page .form-label {
     display: inline-block;
-    width: 60px;
+    width: 70px;
     height: 40px;
     color: #767676;
     font-size: 14px;
-    line-height: 38px;
     margin-right: 7px;
+    margin-top: 11px;
 }
 .tab-page .row-1 .form-control {
-    width: calc(100% - 78px);
+    width: calc(100% - 88px);
     height: 36px;
     font-size: 16px;
     border: none;
@@ -79,33 +79,35 @@
     margin-top: 8px;
     position: absolute;
     bottom: 0;
-    left: 78px;
+    left: 88px;
 }
 
-#pregnancy01, #pregnancy02 {display: none;}
-#pregnancy01:checked ~.radio-label-box .form-check-label01 {
+.form-check-input {display: none;}
+#pregnancy01:checked ~.row-radio-label-box .pregnancy-check-label01,
+#pregnancy02:checked ~.row-radio-label-box .pregnancy-check-label02 {
     border: 2px solid #7465E8;
 }
-#pregnancy02:checked ~.radio-label-box .form-check-label02 {
-    border: 2px solid #7465E8;
+
+.tab-page .row-2 {
+    overflow: hidden;
+    margin-bottom: 20px;
 }
-.row-2 {overflow: hidden;}
 .tab-page .radio-input-box {
-    width: calc(100% - 78px);
+    width: calc(100% - 88px);
     height: 40px;
     float: right;
 }
-.tab-page .radio-label-box {
+.tab-page .row-radio-label-box {
     display: flex;
     justify-content: space-around;
 }
-.tab-page .radio-label-box .form-check-label {
+.tab-page .row-2 .row-radio-label-box .form-check-label {
     display: inline-block;
     width: calc(50% - 10px);
     height: 32px;
-    font-size: 1px;
+    font-size: 12px;
     text-align: center;
-    color: #767676;
+    color: #252525;
     line-height: 32px;
     border-radius: 10px;
     border: 2px solid #eee;
@@ -113,30 +115,103 @@
 
 }
 /* ---------------------- tab-page 3-1 ----------------------- */
-/* ---------------------- tab-page 3-2 ----------------------- */
-/* ---------------------- tab-page 4 ----------------------- */
-/* ---------------------- tab-page 5 ----------------------- */
-/* ---------------------- btn-box ----------------------- */
-/* .wrap .btn-box{} */
-.btn-box {
-    display: flex;
-    justify-content: space-between;
+#sex01:checked ~.row-radio-label-box .sex-check-label01,
+#sex02:checked ~.row-radio-label-box .sex-check-label02,
+#cancer01:checked ~.row-radio-label-box .cancer-check-label01,
+#cancer02:checked ~.row-radio-label-box .cancer-check-label02,
+#inoculation01:checked ~.row-radio-label-box .inoculation-check-label01,
+#inoculation02:checked ~.row-radio-label-box .inoculation-check-label02 {
+    border: 2px solid #7465E8;
 }
+/* ---------------------- tab-page 3-2 ----------------------- */
+.wrap .page-3-2 {display: none;}
+#menarche01:checked ~.row-radio-label-box .menarche-check-label01,
+#menarche02:checked ~.row-radio-label-box .menarche-check-label02,
+#monthlyperiod01:checked ~.radio-label-box .monthlyperiod-check-label01,
+#monthlyperiod02:checked ~.radio-label-box .monthlyperiod-check-label02 {
+    border: 2px solid #7465E8;
+}
+/* ---------------------- tab-page 4 ----------------------- */
+.tab-page .row-3 {
+    height: 124px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+.tab-page .radio-label-box .form-check-label {
+    display: inline-block;
+    width: calc(100%);
+    height: 38px;
+    font-size: 12px;
+    color: #252525;
+    line-height: 38px;
+    border-radius: 5px;
+    border: 2px solid #aaa;
+    padding-left: 8px;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+}
+#smell01:checked ~.radio-label-box .smell-check-label01,
+#smell02:checked ~.radio-label-box .smell-check-label02,
+#smell03:checked ~.radio-label-box .smell-check-label03 {
+    border: 2px solid #7465E8;
+}
+#itch01:checked ~.row-radio-label-box .itch-check-label01,
+#itch02:checked ~.row-radio-label-box .itch-check-label02 {
+    border: 2px solid #7465E8;
+}
+.tab-page .row-4 .form-label {
+    float: left;
+    line-height: 68px;
+    margin-top: 0;
+    margin-right: 18px;
+}
+.tab-page .btn-file-box .btn-file {
+    display: inline-block;
+    width: 68px;
+    height: 68px;
+    border: 3px dotted #adbfca;
+    border-radius: 12px;
+}
+.tab-page .btn-file-box .btn-file01 {
+    margin-right: 8px;
+}
+.btn-file-box .btn-file .cam-icon {
+    padding-left: 21px;
+    padding-top: 12px;
+}
+.btn-file-box .btn-file .cam-icon-txt {
+    color: #666;
+    font-size: 9px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+/* ---------------------- tab-page 5 ----------------------- */
+.page-final .img-final {
+    width: 300px;
+    margin: auto 0;
+    margin-top: 50px;
+}
+/* ---------------------- btn-box ----------------------- */
 .btn-box .btn {
     width: 54px;
-    height: 34px;
+    height: 38px;
     color: white;
     font-size: 16px;
     border: none;
-    border-radius: 6px;
+    border-radius: 6px;   
+    background-color: #7465E8;
     float: left;
     margin-top: 50px;
 }
 .btn-box .prev-btn {
     float: left;
-    background-color: #7465E8;
+
 }
 .btn-box .next-btn {
     float: right;
-    background-color: #7465E8;
+}
+.btn-box .wide {
+    display: none;
+    width: 100%;
 }

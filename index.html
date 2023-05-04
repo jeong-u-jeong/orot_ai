@@ -14,8 +14,7 @@
 <body>
     <div class="wrap" id="tab-page-wrap">
 
-    <!--------------------------------- tab-page -------------------------------->
-
+        <!--------------------------------- tab-page -------------------------------->
         <div class="tab-page page-initial" data-state="1" data-evaluator="evaluatorFunc">
             <h3 class="tab-title">개인정보 수집 및 이용 동의</h3>
             <p class="terms">
@@ -63,46 +62,182 @@
                 <div class="radio-input-box">
                     <input class="form-check-input" type="radio" id="pregnancy01" value="임신중" name="pregnancy"/>
                     <input class="form-check-input" type="radio" id="pregnancy02" value="비임신" name="pregnancy"/>
-                    <div class="radio-label-box">
-                        <label class="form-check-label form-check-label01" for="pregnancy01">임신중</label>
-                        <label class="form-check-label form-check-label02" for="pregnancy02">비임신</label>
+                    <div class="row-radio-label-box">
+                        <label class="form-check-label pregnancy-check-label01" id="pregnancy-lab01" for="pregnancy01">임신중</label>
+                        <label class="form-check-label pregnancy-check-label02" id="pregnancy-lab02" for="pregnancy02">비임신</label>
                     </div>
                 </div>
             </div>
         </div> <!-- tab-page 2 -->
 
-        <div class="tab-page page-3-1" data-state="3" data-evaluator="evaluatorFunc">
-            <h4>3-1</h4>
-        </div> <!-- tab-page 3-1 -->
+        <div class="tab-page" data-state="3" data-evaluator="evaluatorFunc">
+            <div class="page3_inner page-3-1" id="page3-1">
+                <div class="col-1">
+                    <div class="row-1">
+                        <label for="gestational" class="form-label">임신주수</label>
+                        <select class="form-control form-select-lg" name="gestational" aria-label=".form-select-lg" />
+                            <option selected>주수 선택하기</option>
+                            <option value="초기">임신 초기 7주 이내</option>
+                            <option value="중기">임신 중기</option> 
+                            <option value="말기">임신 말기</option>
+                            <option value="모름">모름</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-1">
+                    <div class="row-1">
+                        <label for="lastperiod" class="form-label">마지막 생리날짜</label>
+                        <input type="date" class="form-control" id="lastperiod" name="lastperiod" placeholder="1999-09-09" required />
+                    </div>
+                    <div class="invalid-feedback">임신주수 모르면 마지막 생리날짜 선택</div>
+                </div>
+                <div class="col-1">
+                    <div class="row-1">
+                        <label for="duedate" class="form-label">출산예정일</label>
+                        <input type="date" class="form-control" id="duedate" name="duedate" placeholder="1999-09-09" required />
+                    </div>
+                </div>
+                <div class="row-2">
+                    <label for="sex" class="form-label">검사직전 성관계여부</label>
+                    <div class="radio-input-box">
+                        <input class="form-check-input" type="radio" id="sex01" value="있다" name="sex"/>
+                        <input class="form-check-input" type="radio" id="sex02" value="없다" name="sex"/>
+                        <div class="row-radio-label-box">
+                            <label class="form-check-label sex-check-label01" for="sex01">있다</label>
+                            <label class="form-check-label sex-check-label02" for="sex02">없다</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-2">
+                    <label for="cancer" class="form-label">자궁경부암 검사여부</label>
+                    <div class="radio-input-box">
+                        <input class="form-check-input" type="radio" id="cancer01" value="이상있다" name="cancer"/>
+                        <input class="form-check-input" type="radio" id="cancer02" value="이상없다" name="cancer"/>
+                        <div class="row-radio-label-box">
+                            <label class="form-check-label cancer-check-label01" for="cancer01">이상있다</label>
+                            <label class="form-check-label cancer-check-label02" for="cancer02">이상없다</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-2">
+                    <label for="inoculation" class="form-label">자궁경부암 백신접종</label>
+                    <div class="radio-input-box">
+                        <input class="form-check-input" type="radio" id="inoculation01" value="접종함" name="inoculation"/>
+                        <input class="form-check-input" type="radio" id="inoculation02" value="접종안함" name="inoculation"/>
+                        <div class="row-radio-label-box">
+                            <label class="form-check-label inoculation-check-label01" for="inoculation01">접종함</label>
+                            <label class="form-check-label inoculation-check-label02" for="inoculation02">접종안함</label>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- tab-page 3-1 -->
+    
+            <div class="page3_inner page-3-2" id="page3-2">
+                <div class="row-2">
+                    <label for="menarche" class="form-label">초경여부</label>
+                    <div class="radio-input-box">
+                        <input class="form-check-input" type="radio" id="menarche01" value="했다" name="menarche"/>
+                        <input class="form-check-input" type="radio" id="menarche02" value="아직이다" name="menarche"/>
+                        <div class="row-radio-label-box">
+                            <label class="form-check-label menarche-check-label01" for="menarche01">했다</label>
+                            <label class="form-check-label menarche-check-label02" for="menarche02">아직이다</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1">
+                    <div class="row-1">
+                        <label for="cycle" class="form-label">월경주기</label>
+                        <select class="form-control form-select-lg" name="cycle" aria-label=".form-select-lg" />
+                            <option selected>주기 선택하기</option>
+                            <option value="30">30일 이상</option>
+                            <option value="29">29일</option> 
+                            <option value="28">28일</option>
+                            <option value="27">27일</option>
+                            <option value="26">26일</option>
+                            <option value="25">25일</option>
+                            <option value="24">24일</option>
+                            <option value="23">23일</option>
+                            <option value="22">22일</option>
+                            <option value="21">21일 이하</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row-3">
+                    <label class="form-label ">월경기간</label>
+                    <div class="radio-input-box">
+                        <input class="form-check-input" type="radio" id="monthlyperiod01" name="monthlyperiod" value="2-8일" />
+                        <input class="form-check-input" type="radio" id="monthlyperiod02" name="monthlyperiod" value="월경 외 출혈이 있다" />
+                        <div class="radio-label-box">
+                            <label class="form-check-label monthlyperiod-check-label01" for="monthlyperiod01">2-8일</label>
+                            <label class="form-check-label monthlyperiod-check-label02" for="monthlyperiod02">월경 외 출혈이 있다</label>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- tab-page 3-2 -->
+        </div> <!-- tab-page 3 -->
 
-        <div class="tab-page page-3-2" data-state="3" data-evaluator="evaluatorFunc">
-            <h4>3-2</h4>
-        </div> <!-- tab-page 3-2 -->
 
-        <div class="tab-page" data-state="4" data-evaluator="evaluatorFunc">
-            <h4>4</h4>
+        <div class="tab-page page-save" data-state="4" data-evaluator="evaluatorFunc">
+            <div class="row-3">
+                <label class="form-label ">냄새여부</label>
+                <div class="radio-input-box">
+                    <input class="form-check-input" type="radio" id="smell01" name="smell" value="생선비린내" />
+                    <input class="form-check-input" type="radio" id="smell02" name="smell" value="고기 썩는 냄새" />
+                    <input class="form-check-input" type="radio" id="smell03" name="smell" value="맥주나 효모냄새" />
+                    <div class="radio-label-box">
+                        <label class="form-check-label smell-check-label01" for="smell01">생선비린내</label>
+                        <label class="form-check-label smell-check-label02" for="smell02">고기 썩는 냄새</label>
+                        <label class="form-check-label smell-check-label03" for="smell03">맥주나 효모냄새</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1">
+                <div class="row-2">
+                    <label class="form-label">가려움여부</label>
+                    <div class="radio-input-box">
+                        <input class="form-check-input" type="radio" id="itch01" name="itch" value="이상있다" />
+                        <input class="form-check-input" type="radio" id="itch02" name="itch" value="이상없다" />
+                        <div class="row-radio-label-box">
+                            <label class="form-check-label itch-check-label01" for="itch01">이상있다</label>
+                            <label class="form-check-label itch-check-label02" for="itch02">이상없다</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-4">
+                <label class="form-label">사진첨부</label>
+                <div class="btn-file-box">
+                    <label class="btn-file btn-file01">
+                        <input type="file"style="display: none;" capture="camera" name="imgFile01">
+                        <img class="cam-icon" src="./images/svg/cam.svg" alt="카메라 아이콘 이미지">
+                        <p class="cam-icon-txt">사진 촬영</p>
+                    </label>  
+                    <label class="btn-file">
+                        <input type="file" name="imgFile02" accept="image/*" style="display: none;">
+                        <img class="cam-icon" src="./images/svg/cam.svg" alt="카메라 아이콘 이미지">
+                        <p class="cam-icon-txt">갤러리</p>
+                    </label>  
+                </div>
+            </div>  
         </div> <!-- tab-page 4 -->
 
         <div class="tab-page page-final" data-state="5" data-evaluator="evaluatorFunc">
-            <h4>5</h4>
+            <img class="img-final" src="./images/svg/Thank you.svg" alt="종료 이미지">
         </div> <!-- tab-page 5 -->
-
-    <!--------------------------------- btn-box -------------------------------->
-
+        
+        <!--------------------------------- btn-box -------------------------------->
         <div class="btn-box">
-            <div class="btn">
-                <button id="prev-btn" type="button" class="prev-btn btn">이전</button>
-            </div>
-            <div class="btn">
-                <button id="next-btn" type="button" class="next-btn btn">다음</button>
-            </div>
+            <button id="prev-btn" type="button" class="prev-btn btn">이전</button>
+            <button id="next-btn" type="button" class="next-btn btn">다음</button>
+            <button id="save-btn" type="button" class="save-btn btn wide">저장하기</button>
+            <button id="final-btn" type="button" class="final-btn btn wide">처음으로</button>
         </div> <!-- btn-box -->
     </div>
     
     <script>
         $('#tab-page-wrap').finiteStateMachine({
             prevSelector: '#prev-btn',
-            nextSelector: '#next-btn'
+            nextSelector: '#next-btn',
         });
 
         function evaluatorFunc () {
