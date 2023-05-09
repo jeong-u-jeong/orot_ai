@@ -1,10 +1,23 @@
 * {margin: 0; padding: 0;}
+img {display: block;}
 
 .wrap {
+    max-width: 480px;
     padding: 29px;
     padding-top: 40px;
+    padding-bottom: 40px;
     overflow: hidden;
+    margin: 0 auto;
+    background-color: white;
 }
+
+@media (min-width: 1000px) {
+    body {
+        overflow: hidden;
+        background-color: #eee;
+    }
+    .wrap {height: 100vh;}
+  }
 
 /* ---------------------- tab-page 1 ----------------------- */
 .tab-page {
@@ -113,8 +126,18 @@
     border-radius: 10px;
     border: 2px solid #eee;
     margin-top: 4px;
-
 }
+
+input[type='date']::before {
+    content: attr(data-placeholder);
+    width: 100%;
+}
+
+input[type='date']:focus::before,
+input[type='date']:valid::before {
+  display: none;
+}
+
 /* ---------------------- tab-page 3-1 ----------------------- */
 #sex01:checked ~.row-radio-label-box .sex-check-label01,
 #sex02:checked ~.row-radio-label-box .sex-check-label02,
@@ -188,11 +211,11 @@
 }
 
 /* ---------------------- tab-page 5 ----------------------- */
-.page-final .img-final {
+.page-final .page5-img-box .img-final {
     width: 300px;
-    margin: auto 0;
-    margin-top: 50px;
+    margin: 70px auto;
 }
+
 /* ---------------------- btn-box ----------------------- */
 .btn-box .btn {
     width: 54px;

@@ -60,7 +60,7 @@
                 <div class="col-1">
                     <div class="row-1">
                         <label for="birthDay" class="form-label">생년월일</label>
-                        <input type="date" class="form-control" id="birthDay" name="birthDay" placeholder="1999-09-09" required />
+                        <input type="date" class="form-control" id="birthDay" name="birthDay" data-placeholder="날짜 선택" placeholder="1999-09-09" aria-required="true" required />
                     </div>
                     <div class="invalid-feedback">생년월일을 입력해주세요</div>
                 </div>
@@ -108,14 +108,14 @@
                     <div class="col-1">
                         <div class="row-1">
                             <label for="lastperiod" class="form-label">마지막 생리날짜</label>
-                            <input type="date" class="form-control" id="lastperiod" name="lastperiod" placeholder="1999-09-09" required />
+                            <input type="date" class="form-control" id="lastperiod" name="lastperiod" data-placeholder="날짜 선택" placeholder="1999-09-09" aria-required="true" required />
                         </div>
                         <div class="invalid-feedback">임신주수 모르면 마지막 생리날짜 선택</div>
                     </div>
                     <div class="col-1">
                         <div class="row-1">
                             <label for="duedate" class="form-label">출산예정일</label>
-                            <input type="date" class="form-control" id="duedate" name="duedate" placeholder="1999-09-09" required />
+                            <input type="date" class="form-control" id="duedate" name="duedate" data-placeholder="날짜 선택" placeholder="1999-09-09" aria-required="true" required />
                         </div>
                     </div>
                     <div class="row-2">
@@ -252,7 +252,7 @@
             </div> <!-- tab-page 4 -->
 
             <div class="tab-page page-final" data-state="5" data-evaluator="evaluatorFunc">
-                <img class="img-final" src="./images/svg/Thank you.svg" alt="종료 이미지">
+                <div class="page5-img-box"><img class="img-final" src="./images/svg/Thank you.svg" alt="종료 이미지"></div>
                 <div class="btn-box">
                     <button id="final-btn" type="button" class="final-btn btn">처음으로</button>
                 </div> 
