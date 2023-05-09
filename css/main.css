@@ -3,6 +3,7 @@
 .wrap {
     padding: 29px;
     padding-top: 40px;
+    overflow: hidden;
 }
 
 /* ---------------------- tab-page 1 ----------------------- */
@@ -23,7 +24,7 @@
 .terms-row {
     width: 100%;
     height: 50px;
-    margin-top: 20px;
+    margin-top: 30px;
 }
 #termschk {display: none;}
 .terms-row .terms-label {
