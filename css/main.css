@@ -16,7 +16,11 @@ img {display: block;}
         overflow: hidden;
         background-color: #eee;
     }
-    .wrap {height: 100vh;}
+    .wrap {
+        height: 100vh;
+        padding: 40px;
+        padding-top: 75px
+    }
   }
 
 /* ---------------------- tab-page 1 ----------------------- */
