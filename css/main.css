@@ -179,11 +179,14 @@ input[type=date]::-webkit-datetime-edit-year-field {
 #monthlyperiod02:checked ~.radio-label-box .monthlyperiod-check-label02 {
     border: 2px solid #7465E8;
 }
-/* ---------------------- tab-page 4 ----------------------- */
 .tab-page .row-3 {
     height: 124px;
     overflow: hidden;
     margin-bottom: 20px;
+}
+/* ---------------------- tab-page 4 ----------------------- */
+.tab-page .row-smell {
+    height: 154px;
 }
 .tab-page .radio-label-box .form-check-label {
     display: inline-block;
@@ -195,7 +198,7 @@ input[type=date]::-webkit-datetime-edit-year-field {
     border-radius: 5px;
     border: 2px solid #aaa;
     padding-left: 8px;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
     box-sizing: border-box;
 }
 #smell01:checked ~.radio-label-box .smell-check-label01,

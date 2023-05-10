@@ -10,9 +10,28 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" />
     <link rel="stylesheet" href="./css/main.css">
     <script src="./js/main.js"></script>
-
+    <style>
+     
+    
+        input, textarea, button {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+}
+        .logo {
+            margin-top: 30px;
+            margin-bottom: 15px;
+      display: flex;
+      justify-content: center;
+    }
+    </style>
+    
 </head>
 <body>
+    <div class="logo"> <img src="images/png/Orot_Lab.png" height="40" alt=""></div>
     <div class="wrap" id="tab-page-wrap">
         <form>
             <!--------------------------------- tab-page -------------------------------->
@@ -53,17 +72,17 @@
             <div class="tab-page page2" data-state="2" data-evaluator="evaluatorFunc">
                 <div class="col-1">
                     <div class="row-1">
-                        <label for="name" class="form-label">이름</label>
+                        <label for="name" class="form-label">이름*</label>
                         <input type="text" class="form-control input-text" id="name" name="name" placeholder="이름을 입력하세요." value="" required />
                     </div>
-                    <div class="invalid-feedback">필수입니다</div>
+                    
                 </div>
                 <div class="col-1">
                     <div class="row-1">
-                        <label for="birthDay" class="form-label">생년월일</label>
+                        <label for="birthDay" class="form-label">생년월일*</label>
                         <input type="date" class="form-control" id="birthDay" name="birthDay" data-placeholder="날짜 선택" required />
                     </div>
-                    <div class="invalid-feedback">생년월일을 입력해주세요</div>
+                    
                 </div>
                 <div class="col-1">
                     <div class="row-1">
@@ -100,9 +119,10 @@
                             <select class="form-control form-select-lg" id="gestational" name="gestational" aria-label=".form-select-lg" required/>
                                 <option value="none" selected>주수 선택하기</option>
                                 <option value="초기">임신 초기 7주 이내</option>
-                                <option value="중기">임신 중기</option> 
-                                <option value="말기">임신 말기</option>
-                                <option value="모름">모름</option>
+                                <option value="중기">임신 14주 이내</option> 
+                                <option value="말기">임신 28주 이내</option>
+                                <option value="말기">임신 34주 이내</option>
+                                <option value="말기">임신 34주 이후</option>
                             </select>
                         </div>
                     </div>
@@ -174,26 +194,20 @@
                             <label for="cycle" class="form-label">월경주기</label>
                             <select class="form-control form-select-lg" id="cycle" name="cycle" aria-label=".form-select-lg" required/>
                                 <option value="none" selected>주기 선택하기</option>
-                                <option value="30">30일 이상</option>
-                                <option value="29">29일</option> 
-                                <option value="28">28일</option>
-                                <option value="27">27일</option>
-                                <option value="26">26일</option>
-                                <option value="25">25일</option>
-                                <option value="24">24일</option>
-                                <option value="23">23일</option>
-                                <option value="22">22일</option>
-                                <option value="21">21일 이하</option>
+                                <option value="30">21일 이하</option>
+                                <option value="29">21-35일</option> 
+                                <option value="28">35일 이상</option>
+                               
                             </select>
                         </div>
                     </div>
                     <div class="row-3">
                         <label class="form-label ">월경기간</label>
                         <div class="radio-input-box">
-                            <input class="form-check-input" type="radio" id="monthlyperiod01" name="monthlyperiod" value="2-8일" required/>
+                            <input class="form-check-input " type="radio" id="monthlyperiod01" name="monthlyperiod" value="2-8일" required/>
                             <input class="form-check-input" type="radio" id="monthlyperiod02" name="monthlyperiod" value="월경 외 출혈이 있다" />
                             <div class="radio-label-box">
-                                <label class="form-check-label monthlyperiod-check-label01" for="monthlyperiod01">2-8일</label>
+                                <label class="form-check-label  monthlyperiod-check-label01 " for="monthlyperiod01">2-8일</label>
                                 <label class="form-check-label monthlyperiod-check-label02" for="monthlyperiod02">월경 외 출혈이 있다</label>
                             </div>
                         </div>
@@ -209,9 +223,9 @@
                 <div class="row-3">
                     <label class="form-label ">냄새여부</label>
                     <div class="radio-input-box">
-                        <input class="form-check-input" type="radio" id="smell01" name="smell" value="생선비린내" />
-                        <input class="form-check-input" type="radio" id="smell02" name="smell" value="고기 썩는 냄새" />
-                        <input class="form-check-input" type="radio" id="smell03" name="smell" value="맥주나 효모냄새" />
+                        <input class="form-check-input" type="radio" id="smell01" name="smell" value="생선비린내" /> 
+                        <input class="form-check-input" type="radio" id="smell02" name="smell" value="고기 썩는 냄새" /> 
+                        <input class="form-check-input" type="radio" id="smell03" name="smell" value="맥주나 효모냄새" /> 
                         <div class="radio-label-box">
                             <label class="form-check-label smell-check-label01" for="smell01">생선비린내</label>
                             <label class="form-check-label smell-check-label02" for="smell02">고기 썩는 냄새</label>
