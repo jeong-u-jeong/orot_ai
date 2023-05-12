@@ -11,15 +11,14 @@
 
         let $page = this;
         let $states = $page.find(settings.stateSelector);
-        let $next_button = $(settings.nextSelector);
         let $prev_button = $(settings.prevSelector);
-        let $save_button = $('.save-btn');
-        let $final_button = $('.final-btn');
         let page1check = $('.page1check');
         let page2check = $('.page2check');
         let page3_1check = $('.page3-1check');
         let page3_2check = $('.page3-2check');
         let page4check = $('.page4check');
+        let unsuccess1 = $('.unsuccess1');
+        let unsuccess2 = $('.unsuccess2');
 
 
         let stateData = $states.map(function () {
@@ -39,74 +38,87 @@
             if (termschk.prop('checked') == true) {
                 stateStack.push($curr_state);
                 $prev_button.show();
+                unsuccess1.hide();
 
                 let next_state = window[$curr_state.data('evaluator')]();
                 $curr_state.hide(0, function () {
                     $curr_state = $page.getState(next_state);
                     $curr_state.show();   
                 });
+            } else {
+                unsuccess1.fadeIn(300);
+                unsuccess1.delay(1400).fadeOut(300);
             }
         });
+
 
         page2check.click(function () {
             let name = $('#name');
             let birthDay = $('#birthDay');
-            let hospital = $('#hospital');
             let pregnancy01 = $('#pregnancy01');
             let pregnancy02 = $('#pregnancy02');
 
             if (name.val() !== "") {
                 if (birthDay.val() !== "") {
-                    if (hospital.val() !=="none") {
-                        if(pregnancy01.prop('checked') || pregnancy02.prop('checked') == true){
+                    if(pregnancy01.prop('checked') || pregnancy02.prop('checked') == true){
 
-                            stateStack.push($curr_state);
+                        stateStack.push($curr_state);
+                        unsuccess2.hide();
 
-                            let next_state = window[$curr_state.data('evaluator')]();
-                            $curr_state.hide(0, function () {
-                                $curr_state = $page.getState(next_state);
-                                $curr_state.show();   
-                            });
-                        }
+                        let next_state = window[$curr_state.data('evaluator')]();
+                        $curr_state.hide(0, function () {
+                            $curr_state = $page.getState(next_state);
+                            $curr_state.show();   
+                        });
+                    } else {
+                        unsuccess2.fadeIn(300);
+                        unsuccess2.delay(1400).fadeOut(300);
                     }
+                } else {
+                    unsuccess2.fadeIn(300);
+                    unsuccess2.delay(1400).fadeOut(300);
                 }
 
+            } else {
+                unsuccess2.fadeIn(300);
+                unsuccess2.delay(1400).fadeOut(300);
             }
         });
 
         page3_1check.click(function () {
             let gestational = $('#gestational');
-            let lastperiod = $('#lastperiod');
-            let duedate = $('#duedate');
-            let sex01 = $('#sex01');
-            let sex02 = $('#sex02');
             let cancer01 = $('#cancer01');
             let cancer02 = $('#cancer02');
             let inoculation01 = $('#inoculation01');
             let inoculation02 = $('#inoculation02');
 
             if(gestational.val() !=="none"){
-                if(lastperiod.val() !== ""){
-                    if(duedate.val() !== ""){
-                        if (sex01.prop('checked') || sex02.prop('checked') == true) {
-                            if(cancer01.prop('checked') || cancer02.prop('checked') == true){
-                                if(inoculation01.prop('checked') || inoculation02.prop('checked') == true){
-                                    
-                                    stateStack.push($curr_state);
-            
-                                    let next_state = window[$curr_state.data('evaluator')]();
-                                    $curr_state.hide(0, function () {
-                                        $curr_state = $page.getState(next_state);
-                                        $curr_state.show();   
-                    
-                                        if ($(settings.saveSelector).is($curr_state))
-                                            $prev_button.hide();
-                                    });
-                                }
-                            }
-                        }
+                if(cancer01.prop('checked') || cancer02.prop('checked') == true){
+                    if(inoculation01.prop('checked') || inoculation02.prop('checked') == true){
+                        
+                        stateStack.push($curr_state);
+                        unsuccess2.hide();
+
+                        let next_state = window[$curr_state.data('evaluator')]();
+                        $curr_state.hide(0, function () {
+                            $curr_state = $page.getState(next_state);
+                            $curr_state.show();   
+        
+                            if ($(settings.saveSelector).is($curr_state))
+                                $prev_button.hide();
+                        });
+                    } else {
+                        unsuccess2.fadeIn(300);
+                        unsuccess2.delay(1400).fadeOut(300);
                     }
+                } else {
+                    unsuccess2.fadeIn(300);
+                    unsuccess2.delay(1400).fadeOut(300);
                 }
+
+            } else {
+                unsuccess2.fadeIn(300);
+                unsuccess2.delay(1400).fadeOut(300);
             }
         });
 
@@ -126,12 +138,22 @@
                         $curr_state.hide(0, function () {
                             $curr_state = $page.getState(next_state);
                             $curr_state.show();   
+                            unsuccess2.hide();
 
                             if ($(settings.saveSelector).is($curr_state))
                                 $prev_button.hide();
                         });
+                    } else {
+                        unsuccess2.fadeIn(300);
+                        unsuccess2.delay(1400).fadeOut(300);
                     }
+                } else {
+                    unsuccess2.fadeIn(300);
+                    unsuccess2.delay(1400).fadeOut(300);
                 }
+            } else {
+                unsuccess2.fadeIn(300);
+                unsuccess2.delay(1400).fadeOut(300);
             }
         });
     
@@ -143,12 +165,16 @@
             if (itch01.prop('checked') || itch02.prop('checked') == true) {
 
                 stateStack.push($curr_state);
+                unsuccess2.hide();
 
                 let next_state = window[$curr_state.data('evaluator')]();
                 $curr_state.hide(0, function () {
                     $curr_state = $page.getState(next_state);
                     $curr_state.show();   
                 });
+            } else {
+                unsuccess2.fadeIn(300);
+                unsuccess2.delay(1400).fadeOut(300);
             }
         });
 
@@ -193,3 +219,5 @@
 
 
 }(jQuery));
+
+

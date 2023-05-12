@@ -1,31 +1,35 @@
 * {margin: 0; padding: 0;}
 img {display: block;}
 
+body {
+    overflow: scroll;
+}
+
 .wrap {
     max-width: 480px;
     padding: 29px;
     padding-top: 40px;
     padding-bottom: 40px;
-    overflow: hidden;
     margin: 0 auto;
     background-color: white;
+    position: relative;
 }
 
 @media (min-width: 1000px) {
     body {
-        overflow: hidden;
         background-color: #eee;
     }
     .wrap {
-        height: 100vh;
+        height: calc(100vh - 180px);
         padding: 40px;
-        padding-top: 55px
+        padding-top: 55px;
     }
   }
 
 /* ---------------------- tab-page 1 ----------------------- */
 .tab-page {
     width: 100%;
+    overflow: hidden;
 }
 .tab-page .tab-title {
     color: #3d3d3d;
@@ -79,6 +83,9 @@ img {display: block;}
     font-size: 14px;
     margin-right: 7px;
     margin-top: 11px;
+}
+.tab-page .form-label .span {
+    color: red;
 }
 .tab-page .row-1 .form-control {
     width: calc(100% - 88px);
@@ -244,7 +251,7 @@ input[type=date]::-webkit-datetime-edit-year-field {
 }
 
 /* ---------------------- btn-box ----------------------- */
-.btn-box .btn {
+.btn {
     width: 54px;
     height: 38px;
     color: white;
@@ -253,16 +260,43 @@ input[type=date]::-webkit-datetime-edit-year-field {
     border-radius: 6px;   
     background-color: #7465E8;
     float: left;
-    margin-top: 50px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    position: absolute;
+    bottom: 0;
 }
-.btn-box .prev-btn {
-    float: left;
+.prev-btn {
+    left: 29px;
 
 }
 .btn-box .next-btn {
-    float: right;
+    right: 29px;
 }
 .btn-box .save-btn,
 .btn-box .final-btn{
-    width: 100%;
+    width: calc(100% - 58px);
+    position: absolute;
+    left: 29px;
+}
+
+.unsuccess-box {
+    width: 240px;
+    height: 32px;
+    margin: 50px auto;
+    position: relative;
+}
+
+.unsuccess-box .unsuccess {
+    display: none;
+    width: 240px;
+    height: 32px;
+    color: white;
+    background-color: #00000080;
+    border-radius: 16px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 32px;
+    position: absolute;
+    top: 0;
+    left: 0;
 }

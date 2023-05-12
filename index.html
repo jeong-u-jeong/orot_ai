@@ -11,8 +11,6 @@
     <link rel="stylesheet" href="./css/main.css">
     <script src="./js/main.js"></script>
     <style>
-     
-    
         input, textarea, button {
     appearance: none;
     -moz-appearance: none;
@@ -30,7 +28,7 @@
     </style>
     
 </head>
-<body>
+<body style="overflow-x: hidden">
     <div class="logo"> <img src="images/png/Orot_Lab.png" height="40" alt=""></div>
     <div class="wrap" id="tab-page-wrap">
         <form>
@@ -72,14 +70,14 @@
             <div class="tab-page page2" data-state="2" data-evaluator="evaluatorFunc">
                 <div class="col-1">
                     <div class="row-1">
-                        <label for="name" class="form-label">이름*</label>
+                        <label for="name" class="form-label">이름<span class="span">*</span></label>
                         <input type="text" class="form-control input-text" id="name" name="name" placeholder="이름을 입력하세요." value="" required />
                     </div>
                     
                 </div>
                 <div class="col-1">
                     <div class="row-1">
-                        <label for="birthDay" class="form-label">생년월일*</label>
+                        <label for="birthDay" class="form-label">생년월일<span class="span">*</span></label>
                         <input type="date" class="form-control" id="birthDay" name="birthDay" data-placeholder="날짜 선택" required />
                     </div>
                     
@@ -96,7 +94,7 @@
                     </div>
                 </div>
                 <div class="row-2">
-                    <label for="pregnancy" class="form-label">임신여부</label>
+                    <label for="pregnancy" class="form-label">임신여부<span class="span">*</span></label>
                     <div class="radio-input-box">
                         <input class="form-check-input" type="radio" id="pregnancy01" value="임신중" name="pregnancy" required/>
                         <input class="form-check-input" type="radio" id="pregnancy02" value="비임신" name="pregnancy"/>
@@ -115,7 +113,7 @@
                 <div class="page3_inner page-3-1" id="page3-1">
                     <div class="col-1">
                         <div class="row-1">
-                            <label for="gestational" class="form-label">임신주수</label>
+                            <label for="gestational" class="form-label">임신주수<span class="span">*</span></label>
                             <select class="form-control form-select-lg" id="gestational" name="gestational" aria-label=".form-select-lg" required/>
                                 <option value="none" selected>주수 선택하기</option>
                                 <option value="초기">임신 초기 7주 이내</option>
@@ -123,6 +121,7 @@
                                 <option value="말기">임신 28주 이내</option>
                                 <option value="말기">임신 34주 이내</option>
                                 <option value="말기">임신 34주 이후</option>
+                                <option value="모름">모름</option>
                             </select>
                         </div>
                     </div>
@@ -151,7 +150,7 @@
                         </div>
                     </div>
                     <div class="row-2">
-                        <label for="cancer" class="form-label">자궁경부암 검사여부</label>
+                        <label for="cancer" class="form-label">자궁경부암 검사여부<span class="span">*</span></label>
                         <div class="radio-input-box">
                             <input class="form-check-input" type="radio" id="cancer01" value="이상있다" name="cancer" required/>
                             <input class="form-check-input" type="radio" id="cancer02" value="이상없다" name="cancer"/>
@@ -162,7 +161,7 @@
                         </div>
                     </div>
                     <div class="row-2">
-                        <label for="inoculation" class="form-label">자궁경부암 백신접종</label>
+                        <label for="inoculation" class="form-label">자궁경부암 백신접종<span class="span">*</span></label>
                         <div class="radio-input-box">
                             <input class="form-check-input" type="radio" id="inoculation01" value="접종함" name="inoculation" required/>
                             <input class="form-check-input" type="radio" id="inoculation02" value="접종안함" name="inoculation"/>
@@ -179,7 +178,7 @@
         
                 <div class="page3_inner page-3-2" id="page3-2">
                     <div class="row-2">
-                        <label for="menarche" class="form-label">초경여부</label>
+                        <label for="menarche" class="form-label">초경여부<span class="span">*</span></label>
                         <div class="radio-input-box">
                             <input class="form-check-input" type="radio" id="menarche01" value="했다" name="menarche" required/>
                             <input class="form-check-input" type="radio" id="menarche02" value="아직이다" name="menarche"/>
@@ -191,7 +190,7 @@
                     </div>
                     <div class="col-1">
                         <div class="row-1">
-                            <label for="cycle" class="form-label">월경주기</label>
+                            <label for="cycle" class="form-label">월경주기<span class="span">*</span></label>
                             <select class="form-control form-select-lg" id="cycle" name="cycle" aria-label=".form-select-lg" required/>
                                 <option value="none" selected>주기 선택하기</option>
                                 <option value="30">21일 이하</option>
@@ -202,7 +201,7 @@
                         </div>
                     </div>
                     <div class="row-3">
-                        <label class="form-label ">월경기간</label>
+                        <label class="form-label ">월경기간<span class="span">*</span></label>
                         <div class="radio-input-box">
                             <input class="form-check-input " type="radio" id="monthlyperiod01" name="monthlyperiod" value="2-8일" required/>
                             <input class="form-check-input" type="radio" id="monthlyperiod02" name="monthlyperiod" value="월경 외 출혈이 있다" />
@@ -220,7 +219,7 @@
 
 
             <div class="tab-page page-save" data-state="4" data-evaluator="evaluatorFunc">
-                <div class="row-3">
+                <div class="row-3 row-smell">
                     <label class="form-label ">냄새여부</label>
                     <div class="radio-input-box">
                         <input class="form-check-input" type="radio" id="smell01" name="smell" value="생선비린내" /> 
@@ -235,7 +234,7 @@
                 </div>
                 <div class="col-1">
                     <div class="row-2">
-                        <label class="form-label">가려움여부</label>
+                        <label class="form-label">가려움여부<span class="span">*</span></label>
                         <div class="radio-input-box">
                             <input class="form-check-input" type="radio" id="itch01" name="itch" value="이상있다" required/>
                             <input class="form-check-input" type="radio" id="itch02" name="itch" value="이상없다" />
@@ -273,12 +272,15 @@
                 </div> 
             </div> <!-- tab-page 5 -->
             
-            <!--------------------------------- btn-box -------------------------------->
-            <div class="btn-box">
-                <button id="prev-btn" type="button" class="prev-btn btn">이전</button>
-            </div> 
-            <!-- btn-box -->
 
+            
+            <!--------------------------------- btn -------------------------------->
+            <button id="prev-btn" type="button" class="prev-btn btn">이전</button>
+
+            <div class="unsuccess-box">
+                <div class="unsuccess unsuccess1">약관에 동의해주세요.</div>
+                <div class="unsuccess unsuccess2">필수 항목을 입력해주세요.</div>
+            </div>
         </form>
     </div>
     
