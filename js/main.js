@@ -125,32 +125,19 @@
         page3_2check.click(function () {
             let menarche01 = $('#menarche01');
             let menarche02 = $('#menarche02');
-            let cycle = $('#cycle');
-            let monthlyperiod01 = $('#monthlyperiod01');
-            let monthlyperiod02 = $('#monthlyperiod02');
 
             if (menarche01.prop('checked') ||  menarche02.prop('checked') == true) {
-                if(cycle.val() !=="none"){
-                    if(monthlyperiod01.prop('checked') || monthlyperiod02.prop('checked') == true){
-                        stateStack.push($curr_state);
+                stateStack.push($curr_state);
 
-                        let next_state = window[$curr_state.data('evaluator')]();
-                        $curr_state.hide(0, function () {
-                            $curr_state = $page.getState(next_state);
-                            $curr_state.show();   
-                            unsuccess2.hide();
+                let next_state = window[$curr_state.data('evaluator')]();
+                $curr_state.hide(0, function () {
+                    $curr_state = $page.getState(next_state);
+                    $curr_state.show();   
+                    unsuccess2.hide();
 
-                            if ($(settings.saveSelector).is($curr_state))
-                                $prev_button.hide();
-                        });
-                    } else {
-                        unsuccess2.fadeIn(300);
-                        unsuccess2.delay(1400).fadeOut(300);
-                    }
-                } else {
-                    unsuccess2.fadeIn(300);
-                    unsuccess2.delay(1400).fadeOut(300);
-                }
+                    if ($(settings.saveSelector).is($curr_state))
+                        $prev_button.hide();
+                });
             } else {
                 unsuccess2.fadeIn(300);
                 unsuccess2.delay(1400).fadeOut(300);
